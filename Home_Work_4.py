@@ -8,12 +8,12 @@ num_1 = int(input("Введіть перше число    :"))
 num_2 = int(input("Введіть друге число    :"))
 opr = input("Введіть дію над числами:")
 if opr == '+':
-    print("Сумма цих чисел складає:",num_1 + num_2)
-elif opr=='-':
-    print("Різниця цих чисел      :",num_1 - num_2)
-elif opr=='*':
-    print("Добуток цих чисел      :",num_1*num_2)
-elif opr=='/' and num_2:
-    print("Частка  цих чисел      :",num_1/num_2)
-elif num_2==0:
+    print("Сумма цих чисел складає:", num_1 + num_2)
+elif opr == '-':
+    print("Різниця цих чисел      :", num_1 - num_2)
+elif opr == '*':
+    print("Добуток цих чисел      :", num_1*num_2)
+elif opr == '/' and num_2:
+    print("Частка  цих чисел      :", num_1/num_2)
+elif num_2 == 0:
     print("На нуль ділити не можна!")
