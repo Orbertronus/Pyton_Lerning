@@ -15,6 +15,6 @@ hsh = "#"
 for ch in strg:
     if ch not in string.punctuation:
         hsh += ch
-if len(str) > 140:
+if len(strg) > 140:
     hsh = hsh[0:139]
 print(hsh)
