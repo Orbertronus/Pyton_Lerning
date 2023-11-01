@@ -12,7 +12,7 @@
 import string
 strg = input()
 hsh = "#"
-Title = True # ознака того що наступна літера буде в великою
+Title = True # ознака того що наступна літера буде великою
 for ch in strg:
     if ch not in string.punctuation and ch != ' ':
         if Title:  #  якщо флаг істинний (ознака початку нового слова) то, за умовам завдання,
