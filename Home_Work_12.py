@@ -25,5 +25,5 @@ for ch in strg:
                       # надрукувати із великої літери встановлюємо ознаку в дійсний стан
         Title = True
 if len(strg) > 140:
-    hsh = hsh[0:139]
+    hsh = hsh[0:140]
 print(hsh)
