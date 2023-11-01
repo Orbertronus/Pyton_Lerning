@@ -10,11 +10,20 @@
 #  'i like python community!' -> #ILikePythonCommunity
 #  'Should, I. subscribe? Yes!' -> #ShouldISubscribeYes
 import string
-strg = input().replace(' ', '')
+strg = input()
 hsh = "#"
+Title = True # ознака того що наступна літера буде в великою
 for ch in strg:
-    if ch not in string.punctuation:
-        hsh += ch
+    if ch not in string.punctuation and ch != ' ':
+        if Title:  #  якщо флаг істинний (ознака початку нового слова) то, за умовам завдання,
+                   #  поточну літеру заносимо в рез. тег. із великої
+            hsh += ch.upper()
+            Title = False # після минулої операції встановлюемо ознаку в "недійсний стан"
+        else:
+            hsh += ch
+    elif ch == ' ':   # після пробілу іде початок нового слова, тому щоб його
+                      # надрукувати із великої літери встановлюємо ознаку в дійсний стан
+        Title = True
 if len(strg) > 140:
     hsh = hsh[0:139]
 print(hsh)
