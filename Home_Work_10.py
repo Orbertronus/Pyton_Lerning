@@ -23,7 +23,7 @@
 
 import keyword
 import string
-val_str = input()
+val_str = input("Введіть ім'я змінної \n")
 lst_digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 result = True
 if len(val_str):
@@ -36,8 +36,8 @@ if len(val_str):
         result = False
     for ch in val_str:
         if (((ch in string.punctuation) and (ch != '_')) or  # чи містить ім'я змінної знаки пунктуації,
-                                               ch == " " or # пропуски,
-                                             ch.isupper() #  чи  великі літери
+                                               ch == " " or #  пропуски,
+                                             ch.isupper() #  великі літери
            ):
             result = False
 print(result)

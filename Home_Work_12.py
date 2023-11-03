@@ -10,7 +10,7 @@
 #  'i like python community!' -> #ILikePythonCommunity
 #  'Should, I. subscribe? Yes!' -> #ShouldISubscribeYes
 import string
-strg = input()
+strg = input('Введіть рядок, який буде перетворено на hashtag \n')
 hsh = "#"
 Title = True # ознака того що наступна літера буде великою
 for ch in strg:
