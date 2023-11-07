@@ -14,7 +14,7 @@
 # в) get_value => True
 # г) get value => False
 # д) get!value => False
-# є) some_super_puper_value => True !!!Цей приклад суперечіть п.5 умови задачі!!!!
+# є) some_super_puper_value => True
 # ж) Get_value => False
 # з) get_Value => False
 # к) getValue => False
@@ -27,17 +27,15 @@ val_str = input("Введіть ім'я змінної \n")
 lst_digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 result = True
 if len(val_str):
-    if (              val_str.isdigit()| #чи складається змінна із цифр (див. п.2 умов. завдання)
-            (val_str[0] in lst_digits) | # чи перший символ є цифрою (див.п.1 умов. завдання)
-            (val_str in keyword.kwlist)| # чи не є  жодним із зареєстрованих слів (див. п.4)
-           ((val_str.count('_')>1))      # чи складається ім'я змінної  тільки із одного підкреслення "_"
-      # (див. п.5). Зокрема це суперечіть прикладу  із п. є! Зверніть увагу!
+    if (val_str.isdigit() |  # чи складається змінна із цифр (див. п.2 умов. завдання)
+       (val_str[0] in lst_digits) |  # чи перший символ є цифрою (див.п.1 умов. завдання)
+       (val_str in keyword.kwlist)   # чи не є  жодним із зареєстрованих слів (див. п.4)
        ):
         result = False
     for ch in val_str:
         if (((ch in string.punctuation) and (ch != '_')) or  # чи містить ім'я змінної знаки пунктуації,
-                                               ch == " " or #  пропуски,
-                                             ch.isupper() #  великі літери
+                                               ch == " " or  # пропуски,
+                                             ch.isupper()  # великі літери
            ):
             result = False
 print(result)
