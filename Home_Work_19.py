@@ -9,7 +9,12 @@ import random
 
 
 def common_elements():
-    set3 = {(i + 1) * 3 for i in range(random.randrange(5, 30, random.randint(1, 3)))}
-    set5 = {(i + 1) * 5 for i in range(random.randrange(5, 30, random.randint(1, 5)))}
-    set3_5 = set3.intersection(set5)
+    set_3 = {(i + 1) * 3 for i in range(random.randrange(5, 30, random.randint(1, 3)))}
+    set_5 = {(i + 1) * 5 for i in range(random.randrange(5, 30, random.randint(1, 5)))}
+    print('Множина кратних 3 = ',set_3)
+    print('Множина кратних 5 = ',set_5)
+    set3_5 = set_3.intersection(set_5)
     return set3_5
+
+
+print('Перетин множин    = ',common_elements())
