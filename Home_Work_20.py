@@ -11,7 +11,7 @@
 
 def add_one(some_list):
     # перетворимо список цифр some_list в список рядків із метою застосування ф. join()
-    # що з'єднае всі єлементи списку в один рядок  num
+    # що поєднае всі єлементи списку в один рядок  num
     num_str_list = [str(dig_lst_elem) for dig_lst_elem in some_list]
     num = ''.join(num_str_list)
     # далі перетворимо рядок в цифру і додамо  1 (згідно умові з.)
