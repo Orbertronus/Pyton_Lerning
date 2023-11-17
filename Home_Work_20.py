@@ -21,7 +21,7 @@ def add_one(some_list):
     #         що роз'днає цифру на окремі складові в списку
     #        - отриманий список символів(цифрових)
     #        перетворюемо на цифри і повертаємо
-    return [int(num_str) for num_str in list(str(int(num) + 1))]
+    return [int(num_str) for num_str in str(int(num) + 1)]
 
 
 assert add_one([1, 2, 3, 4]) == [1, 2, 3, 5], 'Test1'

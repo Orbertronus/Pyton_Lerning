@@ -11,9 +11,8 @@ def is_palindrome(text):
     # підготуємо рядок до перевірки видаливши всі символи пунктуації, пробіли
     # та перевівши всі букви в один регістр
     text = text.replace(' ', '').lower()
-    for x in text:
-        if x in string.punctuation:
-            text = text.replace(x, '')
+    for x in string.punctuation:
+        text = text.replace(x, '')
     # за допомогою зрізів перевіряємо обидві частини і повертаємо результат
     return text[0:len(text)//2] == text[-1:len(text)//2:-1]
 
