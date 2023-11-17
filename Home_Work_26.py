@@ -15,37 +15,16 @@
 """
 
 import string
-
-
-def cut_s_ptn(txt):
-    """ Зрізає рядок до першого знака пунктуації"""
-    i = 0
-    for ch in txt:
-        if ch in string.punctuation and ch not in "'":
-            return txt[:i], i
-        i += 1
-    return txt, i
 def first_word(text):
     """ Пошук першого слова """
-    ind = 0
-    i = 0
-
-    while True:
-        ind = text.find(' ',ind)
-
-        if ind == -1:
-        # випадок коли не знайдено пробілу. обріжемо по знак пунктуації
-            res_txt, ind = cut_s_ptn(text)
+    clear_txt=''
+    for ch in text:
+        if ch in string.punctuation and ch not in "'":
+            clear_txt += ' '
         else:
-            # коли пробіл є, здійснюємо здріз
-            res_txt, i = cut_s_ptn(text[i: ind])
-
-        if len(res_txt) > 0 or ind == len(text):
-            return res_txt
-
-        ind += 1
-        i = ind
-
+            clear_txt += ch
+    lst_txt = clear_txt.split()
+    return lst_txt[0]
 
 assert first_word("Hello world") == "Hello", 'Test1'
 assert first_word("greetings, friends") == "greetings", 'Test2'
