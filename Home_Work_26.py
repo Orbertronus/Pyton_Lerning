@@ -18,6 +18,7 @@ import string
 
 
 def cut_s_ptn(txt):
+    """ Зрізає рядок до першого знака пунктуації"""
     i = 0
     for ch in txt:
         if ch in string.punctuation and ch not in "'":
