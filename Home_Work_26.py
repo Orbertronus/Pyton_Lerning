@@ -15,9 +15,11 @@
 """
 
 import string
+
+
 def first_word(text):
     """ Пошук першого слова """
-    clear_txt=''
+    clear_txt = ''
     for ch in text:
         if ch in string.punctuation and ch not in "'":
             clear_txt += ' '
