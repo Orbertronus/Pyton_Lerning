@@ -14,19 +14,10 @@
 параметри: Рядок.
 """
 
-import string
-
 
 def first_word(text):
     """ Пошук першого слова """
-    clear_txt = ''
-    for ch in text:
-        if ch in string.punctuation and ch not in "'":
-            clear_txt += ' '
-        else:
-            clear_txt += ch
-    lst_txt = clear_txt.split()
-    return lst_txt[0]
+    return text.replace('.', ' ').replace(',', '').split()[0]
 
 
 assert first_word("Hello world") == "Hello", 'Test1'
