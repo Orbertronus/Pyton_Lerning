@@ -32,17 +32,11 @@ def delete_html_tags(html_file, result_file='cleaned.txt'):
             str_without_tags += ch
         if ch == '>':
             is_tag = False
-    is_line_empty = True
-    tmp_line = ''
-    for ch in str_without_tags:
-        tmp_line += ch
-        if ch not in [' ', '\n']:
-            is_line_empty = False
-        if ch == '\n':
-            if not is_line_empty:
-                str_without_blanks += tmp_line
-            tmp_line = ''
-            is_line_empty = True
+    str_lines = list(str_without_tags.split('\n'))
+    for tmp_line in str_lines:
+        if len(tmp_line.rstrip()) > 1:
+            str_without_blanks += tmp_line + '\n'
+
     with codecs.open(result_file, 'w', 'utf-8') as file:
         file.write(str_without_blanks[:-1])
 
