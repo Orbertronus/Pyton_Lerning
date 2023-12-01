@@ -46,7 +46,11 @@ class Group:
         self.group.add(student)
 
     def delete_student(self, last_name):
-        self.group.discard(self.find_student(last_name))
+        if self.find_student(last_name) is not None:
+            self.group.discard(self.find_student(last_name))
+            self.total_students -= 1
+            return 0
+        return -1
 
     def find_student(self, last_name):
         for instance in self.group:
