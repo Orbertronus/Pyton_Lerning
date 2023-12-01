@@ -62,6 +62,7 @@ class Group:
         all_students = ''
         for std in self.group:
             all_students += f'{std.first_name} {std.last_name}, {std.gender} {std.age}\n'
+        all_students += f'Total students: {self.total_students}\n'
         return f'Number:{self.number}\n {all_students} '
 
 
@@ -96,8 +97,8 @@ try:
         gr.add_student(st[ind])
 except MaxStudentException as err:
     print(err.message)
-
 print(gr)
+
 # стосовно коду нижче ніяких вказівок не було, тому функціонал лишаю
 assert str(gr.find_student('Jobs')) == str(st[0]), 'Test1'
 assert gr.find_student('Jobs2') is None, 'Test2'
