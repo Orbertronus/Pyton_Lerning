@@ -41,7 +41,7 @@ class Group:
 
     def add_student(self, student):
         if self.total_students == 10:
-            raise MaxStudentException("Reached maximum number 10 of students!", self.total_students)
+            raise MaxStudentException("Досягнуто максимальної кількості 10 студентів в групі!", self.total_students)
         self.total_students += 1
         self.group.add(student)
 
@@ -74,7 +74,7 @@ class MaxStudentException(Exception):
 
 st = [
        Student('Male', 30, 'Steve', 'Jobs', 'AN142'),
-       Student('Female', 25, 'Liza', 'Taylor','AN145'),
+       Student('Female', 25, 'Liza', 'Taylor', 'AN145'),
        Student('Male', 30, 'Klark', 'Denits', 'AL102'),
        Student('Female', 26, 'Klara', 'Chasten', 'AK012'),
        Student('Male', 31, 'Roy', 'Shneider', 'AS120'),
