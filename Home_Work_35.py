@@ -83,6 +83,7 @@ st8 = Student('Female', 27, 'Sarah', 'Parker', 'AP002')
 st9 = Student('Female', 27, 'Andrea', 'Wells', 'AW095')
 st10 = Student('Male', 34, 'Robert', 'Dapt', 'RN027')
 st11 = Student('Male', 23, 'Stan', 'Ipkins', 'SN005')
+st12 = Student('Male', 23, 'Ethan', 'Price', 'IN855')
 gr = Group('PD1')
 try:
     gr.add_student(st1)
@@ -96,6 +97,7 @@ try:
     gr.add_student(st9)
     gr.add_student(st10)
     gr.add_student(st11)
+    gr.add_student(st12)
 except MaxStudentException as err:
     print(err.message)
 
