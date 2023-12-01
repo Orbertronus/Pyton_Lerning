@@ -72,38 +72,30 @@ class MaxStudentException(Exception):
         return self.message
 
 
-st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
-st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
-st3 = Student('Male', 30, 'Klark', 'Denits', 'AL102')
-st4 = Student('Female', 26, 'Klara', 'Chasten', 'AK012')
-st5 = Student('Male', 31, 'Roy', 'Shneider', 'AS120')
-st6 = Student('Male', 29, 'Bruse', 'Roberts', 'DN781')
-st7 = Student('Male', 28, 'Lorn', 'Olbernt', 'LD802')
-st8 = Student('Female', 27, 'Sarah', 'Parker', 'AP002')
-st9 = Student('Female', 27, 'Andrea', 'Wells', 'AW095')
-st10 = Student('Male', 34, 'Robert', 'Dapt', 'RN027')
-st11 = Student('Male', 23, 'Stan', 'Ipkins', 'SN005')
-st12 = Student('Male', 23, 'Ethan', 'Price', 'IN855')
+st = [
+       Student('Male', 30, 'Steve', 'Jobs', 'AN142'),
+       Student('Female', 25, 'Liza', 'Taylor','AN145'),
+       Student('Male', 30, 'Klark', 'Denits', 'AL102'),
+       Student('Female', 26, 'Klara', 'Chasten', 'AK012'),
+       Student('Male', 31, 'Roy', 'Shneider', 'AS120'),
+       Student('Male', 29, 'Bruse', 'Roberts', 'DN781'),
+       Student('Male', 28, 'Lorn', 'Olbernt', 'LD802'),
+       Student('Female', 27, 'Sarah', 'Parker', 'AP002'),
+       Student('Female', 27, 'Andrea', 'Wells', 'AW095'),
+       Student('Male', 34, 'Robert', 'Dapt', 'RN027'),
+       Student('Male', 23, 'Stan', 'Ipkins', 'SN005'),
+       Student('Male', 23, 'Ethan', 'Price', 'IN855')
+       ]
 gr = Group('PD1')
 try:
-    gr.add_student(st1)
-    gr.add_student(st2)
-    gr.add_student(st3)
-    gr.add_student(st4)
-    gr.add_student(st5)
-    gr.add_student(st6)
-    gr.add_student(st7)
-    gr.add_student(st8)
-    gr.add_student(st9)
-    gr.add_student(st10)
-    gr.add_student(st11)
-    gr.add_student(st12)
+    for ind in range(len(st)):
+        gr.add_student(st[ind])
 except MaxStudentException as err:
     print(err.message)
 
 print(gr)
-# стосовно коду нижче ніяких вказівок не було, тому лишаю все (окрім коментарію біля print)  як було
-assert str(gr.find_student('Jobs')) == str(st1), 'Test1'
+# стосовно коду нижче ніяких вказівок не було, тому функціонал лишаю
+assert str(gr.find_student('Jobs')) == str(st[0]), 'Test1'
 assert gr.find_student('Jobs2') is None, 'Test2'
 assert isinstance(gr.find_student('Jobs'), Student) is True, 'Метод поиска должен возвращать экземпляр'
 
