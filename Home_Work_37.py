@@ -31,18 +31,16 @@ class Rectangle:
 
     def __eq__(self, other):
         if isinstance(other, Rectangle):
-            return self.width == other.width and self.height == other.height
-        if isinstance(other, (int, float)):
-            return self.width == other and self.height == other
+            return self.get_square() == other.get_square()
         if isinstance(other, (list, tuple)):
-            return self.width == other[0] and self.height == other[1]
+            return self.get_square() == Rectangle(other[0], other[1]).get_square()
         if isinstance(other, set):
             # дістанемо елементи множини методом pop() видалення із поверненням
             sw, sh = other.pop(), other.pop()
             # повернемо значення множини назад відновивши її початковий стан
             other.__init__({sw, sh})
             # порівняємо збереженні значення із данними прямокутника
-            return self.width == sw and self.height == sh
+            return self.get_square() == Rectangle(sw,  sh).get_square()
         return NotImplemented
 
     def __add__(self, other):
@@ -69,8 +67,6 @@ class Rectangle:
         return self.__add__(other)
 
     def __mul__(self, other):
-        if isinstance(other, Rectangle):
-            return Rectangle(self.width * other.width, self.height * other.height)
         if isinstance(other, (int, float)):
             return Rectangle(int(self.width * (other/2)), int(self.height * (other/2)))
         return NotImplemented
@@ -87,8 +83,6 @@ assert r2.get_square() == 18, 'Test2'
 
 r3 = r1 + r2
 
-print(r1 + 'r1')
-print('Square r3='+str(r3.get_square()))
 assert r3.get_square() == 26, 'Test3'
 r3_1 = r2 + r1
 assert r3_1.get_square() == r2.get_square() + r1.get_square(), 'Test3_1'
@@ -100,20 +94,21 @@ r4 = r1 * 4
 assert r4.get_square() == 32, 'Test4'
 
 r5 = Rectangle(3, 6)
+r5_1 = Rectangle(2, 9)
+
 assert r5 == r2, 'Test5'
+assert r5 == r5_1, 'Test5.1'
+
 
 r6 = Rectangle(3, 3)
-assert r6 == 3, 'Test6'
-assert r6 == [3, 3], 'Test6.1'
-assert r6 == (3, 3), 'Test6.2'
+assert r6 == [3, 3], 'Test6'
+assert r6 == (3, 3), 'Test6.1'
 
 ls_t = [3, 6]
 t_t = (2, 4)
 s_t = {2, 4}
 r7 = Rectangle(7.212, 7.212)
-assert r7 == 7.212, 'Test7'
-assert r5 == ls_t, 'Test7.1'
-assert r1 == t_t, 'Test7.2'
-assert r1 == s_t, 'Test7.3'
-print(f'Множина {s_t} після порівняння')
+assert r5 == ls_t, 'Test7'
+assert r1 == t_t, 'Test7.1'
+assert r1 == s_t, 'Test7.2'
 print('Ok')
