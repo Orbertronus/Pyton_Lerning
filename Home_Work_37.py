@@ -104,9 +104,9 @@ r6 = Rectangle(3, 3)
 assert r6 == [3, 3], 'Test6'
 assert r6 == (3, 3), 'Test6.1'
 
-ls_t = [3, 6]
-t_t = (2, 4)
-s_t = {2, 4}
+ls_t = [9, 2]
+t_t = (1, 8)
+s_t = {0.5, 16}
 r7 = Rectangle(7.212, 7.212)
 assert r5 == ls_t, 'Test7'
 assert r1 == t_t, 'Test7.1'
